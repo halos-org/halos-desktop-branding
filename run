@@ -42,7 +42,7 @@ function lint-deb {
   #@ Check package quality with lintian
   #@ Category: Debian
   echo "🔍 Running lintian..."
-  debtools lintian --info --display-info --pedantic halos-desktop-branding*.deb
+  debtools lintian --info --display-info --pedantic *.deb
 }
 
 function bumpversion {

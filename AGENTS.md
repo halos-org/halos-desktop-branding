@@ -19,6 +19,8 @@ The two conffiles are installed at paths owned by the upstream `rpd-common` pack
 
 The package declares `Provides: halos-desktop-wallpaper`, `Conflicts: halos-desktop-wallpaper`, `Replaces: halos-desktop-wallpaper`. This virtual package is depended on by `halos-desktop` (in `halos-metapackages`) and is also Provided by `hatlabs/halos-halpi-desktop-branding`; only one real provider can be installed at a time. Pi-gen pre-installs the HALPI2 variant on HALPI2 desktop builds; on other desktop builds, this package is the only candidate and apt picks it.
 
+Both real providers ship their respective wallpaper to the same path (`/usr/share/halos/wallpapers/halos.jpg`). The path collision is enforced at the dpkg-solver level via the virtual-package Conflicts above, not at the filesystem level — `apt` refuses to install both packages simultaneously, so the two `halos.jpg` files never need to coexist on disk.
+
 Per-user wallpaper choices in `~/.config/pcmanfm/default/desktop-items-{0,1}.conf` take precedence over the system defaults this package ships, so user agency is preserved.
 
 ## Repository Layout
