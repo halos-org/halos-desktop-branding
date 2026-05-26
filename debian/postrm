@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    remove|purge|abort-install|disappear)
+        for n in 0 1; do
+            f="/etc/xdg/pcmanfm/default/desktop-items-${n}.conf"
+            dpkg-divert --package halos-desktop-branding --remove --rename "${f}" || true
+        done
+        ;;
+esac
+
+#DEBHELPER#
