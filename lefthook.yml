@@ -11,7 +11,3 @@ pre-commit:
     check-changelog:
       run: .github/scripts/check-changelog-edits.sh
       fail_text: "Direct debian/changelog edits are not allowed. Use './run bumpversion' instead."
-
-    check-conffile-parity:
-      run: diff -q etc/xdg/pcmanfm/default/desktop-items-0.conf etc/xdg/pcmanfm/default/desktop-items-1.conf >/dev/null
-      fail_text: "desktop-items-0.conf and desktop-items-1.conf must remain byte-identical (pcmanfm reads one per monitor; multi-monitor users would otherwise see inconsistent wallpapers). Mirror any edit to both files."

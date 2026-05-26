@@ -12,6 +12,9 @@ debian/files
 debian/*.substvars
 debian/*.log
 
+# Generated at build time from desktop-items-0.conf (see debian/rules)
+etc/xdg/pcmanfm/default/desktop-items-1.conf
+
 # IDE
 .idea/
 .vscode/
